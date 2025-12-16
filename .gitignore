@@ -1,0 +1,41 @@
+
+---
+
+# 📄 .gitignore
+
+```gitignore
+# Maven
+target/
+
+# Eclipse
+.settings/
+.classpath
+.project
+bin/
+
+# TestNG Reports
+test-output/
+
+# Logs
+logs/
+
+# Extent Reports
+reports/
+
+# Screenshots
+screenshots/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+
+# Node (if any)
+node_modules/
+
+# Temporary files
+*.log
+*.tmp
