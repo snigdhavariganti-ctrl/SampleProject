@@ -2,6 +2,11 @@ package pages;
 
 import org.openqa.selenium.By;
 
+<<<<<<< HEAD
+=======
+import utilities.WaitUtils;
+
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
 public class CartPage extends BasePage {
 
     // Locators
@@ -10,6 +15,11 @@ public class CartPage extends BasePage {
     private By deleteButtons = By.xpath("//input[@value='Delete']");
     private By proceedToCheckoutBtn = By.name("proceedToRetailCheckout");
     private By cartCount = By.id("nav-cart-count");
+<<<<<<< HEAD
+=======
+    private By signInHeader = By.tagName("h1"); // text = "Sign in"
+
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
 
     /**
      * Get number of items shown in cart icon.
@@ -41,6 +51,10 @@ public class CartPage extends BasePage {
     public CheckoutPage proceedToCheckout() {
         scrollIntoView(proceedToCheckoutBtn);
         click(proceedToCheckoutBtn);
+<<<<<<< HEAD
+=======
+        WaitUtils.waitforVisibility(signInHeader);
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
         return new CheckoutPage();
     }
 

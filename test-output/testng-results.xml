@@ -2,6 +2,7 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite started-at="2025-12-07T08:40:07 IST" name="Suite" finished-at="2025-12-07T08:40:16 IST" duration-ms="8490">
     <groups>
     </groups>
@@ -20,6 +21,29 @@
           </reporter-output>
         </test-method> <!-- TearDown -->
       </class> <!-- tests.SearchTest -->
+=======
+  <suite started-at="2025-12-14T23:16:15 IST" name="Suite" finished-at="2025-12-14T23:16:44 IST" duration-ms="28452">
+    <groups>
+      <group name="regression">
+        <method signature="CheckOutTest.testCheckoutFlow()[pri:0, instance:tests.CheckOutTest@4263b080]" name="testCheckoutFlow" class="tests.CheckOutTest"/>
+      </group> <!-- regression -->
+    </groups>
+    <test started-at="2025-12-14T23:16:15 IST" name="Test" finished-at="2025-12-14T23:16:44 IST" duration-ms="28452">
+      <class name="tests.CheckOutTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.CheckOutTest@4263b080]" started-at="2025-12-14T23:16:15 IST" name="setUp" finished-at="2025-12-14T23:16:20 IST" duration-ms="4373" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testCheckoutFlow()[pri:0, instance:tests.CheckOutTest@4263b080]" started-at="2025-12-14T23:16:20 IST" name="testCheckoutFlow" finished-at="2025-12-14T23:16:43 IST" duration-ms="22989" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCheckoutFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.CheckOutTest@4263b080]" started-at="2025-12-14T23:16:43 IST" name="tearDown" finished-at="2025-12-14T23:16:44 IST" duration-ms="1031" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.CheckOutTest -->
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

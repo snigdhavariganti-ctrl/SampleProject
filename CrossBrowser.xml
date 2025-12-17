@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="CrossBrowserSuite" parallel="tests" thread-count="3">
+
+    <!-- 🔵 Chrome -->
+    <test name="Chrome Tests">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="headless" value="false"/>
+        <classes>
+            <class name="tests.SearchTest"/>
+            <class name="tests.ProductTest"/>
+            <class name="tests.CheckOutTest"/>
+        </classes>
+    </test>
+
+    <!-- 🟣 Edge -->
+    <test name="Edge Tests">
+        <parameter name="browser" value="edge"/>
+        <parameter name="headless" value="false"/>
+        <classes>
+            <class name="tests.SearchTest"/>
+            <class name="tests.ProductTest"/>
+            <class name="tests.CheckOutTest"/>
+        </classes>
+    </test>
+
+    <!-- 🔥 Firefox -->
+    <test name="Firefox Tests">
+        <parameter name="browser" value="firefox"/>
+        <parameter name="headless" value="false"/>
+        <classes>
+            <class name="tests.SearchTest"/>
+            <class name="tests.ProductTest"/>
+            <class name="tests.CheckOutTest"/>
+        </classes>
+    </test>
+
+</suite>
