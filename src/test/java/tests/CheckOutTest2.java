@@ -9,12 +9,9 @@ import pages.SearchResultsPage;
 import pages.ProductPage;
 import pages.AddToCartPage;
 import pages.CartPage;
-<<<<<<< HEAD
 import pages.CheckoutPage;
-=======
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
 
-public class CheckOutTest extends TestBase {
+public class CheckOutTest2 extends TestBase {
 
     @Test(groups = {"regression"})
     public void testCheckoutFlow() throws Exception {
@@ -23,12 +20,7 @@ public class CheckOutTest extends TestBase {
         SearchResultsPage results = new HomePage()
                 .search("Laptop");
 
-<<<<<<< HEAD
         Assert.assertTrue(results.titleContains("Laptop"), "Search results did not match!");
-=======
-        Assert.assertTrue(results.titleContains("Laptop"), 
-                "❌ Search results did not match!");
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
 
         // 2️⃣ Click first product
         ProductPage product = results.clickFirstProduct();
@@ -36,17 +28,11 @@ public class CheckOutTest extends TestBase {
         // 3️⃣ Add to Cart
         AddToCartPage atc = product.addToCart();
 
-<<<<<<< HEAD
         Assert.assertTrue(atc.isProductAdded(), "❌ Add to Cart message did not appear!");
-=======
-        Assert.assertTrue(atc.isProductAdded(), 
-                "❌ Add to Cart confirmation message NOT shown!");
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
 
         // 4️⃣ Go to Cart
         CartPage cart = atc.clickCart();
 
-<<<<<<< HEAD
         Assert.assertTrue(cart.getCartCount() > 0, "❌ Cart is empty after adding product!");
 
         // 5️⃣ Proceed to Checkout
@@ -84,21 +70,5 @@ public class CheckOutTest extends TestBase {
         // Assert.fail("Order placed — disable this line for safety!");
 
         System.out.println("✅ Checkout flow reached payment page successfully.");
-=======
-        Assert.assertTrue(cart.getCartCount() > 0, 
-                "❌ Cart is empty after adding product!");
-
-        // 5️⃣ Proceed to Checkout (expected → goes to Login Page)
-        cart.proceedToCheckout();
-        
-
-
-        // 🌟 Expected: Amazon redirects to Sign-in page
-        String url = driver.getCurrentUrl();
-        Assert.assertTrue(url.contains("signin") || url.contains("ap/signin"),
-                "❌ Checkout did NOT redirect to Login Page!");
-
-        System.out.println("✅ Checkout redirected to Login Page (Expected behavior).");
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
     }
 }

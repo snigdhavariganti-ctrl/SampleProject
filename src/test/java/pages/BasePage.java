@@ -1,11 +1,16 @@
 package pages;
 
+<<<<<<< HEAD
+import java.util.List;
+
+=======
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,8 +22,11 @@ import utilities.WaitUtils;
 public class BasePage {
 
     protected WebDriver driver;
+<<<<<<< HEAD
+=======
     private static final Logger log = LogManager.getLogger(BasePage.class);
 
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
 
     public BasePage() {
         this.driver = DriverFactory.getDriver();
@@ -29,7 +37,11 @@ public class BasePage {
         try {
             WaitUtils.waitforClickable(locator).click();
         } catch (Exception e) {
+<<<<<<< HEAD
+            System.out.println("Normal click failed. Trying JS click: " + locator);
+=======
             log.info("Normal click failed. Trying JS click: " + locator);
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
             jsClick(locator);
         }
     }
@@ -38,8 +50,11 @@ public class BasePage {
     public void input(By locator, String text) {
         WebElement ele = WaitUtils.waitforVisibility(locator);
         ele.clear();
+<<<<<<< HEAD
+=======
         log.info("Typing into element: " + locator + " value: " + text);
 
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
         ele.sendKeys(text);
     }
 
@@ -78,6 +93,8 @@ public class BasePage {
             return false;
         }
     }
+<<<<<<< HEAD
+=======
     public void switchToNewTabIfOpened() {
         Set<String> handles = driver.getWindowHandles();
         if (handles.size() > 1) {
@@ -86,4 +103,5 @@ public class BasePage {
         }
     }
 
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
 }

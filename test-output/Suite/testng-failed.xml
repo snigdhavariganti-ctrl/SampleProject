@@ -3,6 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
+<<<<<<< HEAD
+      <class name="tests.SearchTest">
+        <methods>
+          <include name="searchProduct"/>
+        </methods>
+      </class> <!-- tests.SearchTest -->
+=======
       <class name="tests.CheckOutTest">
         <methods>
           <include name="tearDown"/>
@@ -10,6 +17,7 @@
           <include name="testCheckoutFlow"/>
         </methods>
       </class> <!-- tests.CheckOutTest -->
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

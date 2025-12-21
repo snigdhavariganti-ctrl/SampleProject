@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+/target/
+=======
 
 ---
 
@@ -39,3 +42,4 @@ node_modules/
 # Temporary files
 *.log
 *.tmp
+>>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
