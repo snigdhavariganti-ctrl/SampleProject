@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/your-repo.git'
+            }
+        }
+
+        stage('Build & Test') {
+            steps {
+                bat 'mvn clean test'
+            }
+        }
+    }
+
+    post {
+        always {
+            emailext(
+                subject: "Build Status: ${currentBuild.currentResult}",
+                body: "Build completed. Check Jenkins for details.",
+                to: "snigdha.variganti@gmail.com",
+                attachmentsPattern: "reports/extent.html"
+            )
+        }
+    }
+}
