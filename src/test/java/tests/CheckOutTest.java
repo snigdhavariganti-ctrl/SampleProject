@@ -21,7 +21,7 @@ public class CheckOutTest extends TestBase {
 
         Assert.assertTrue(
                 results.titleContains("Laptop"),
-                "❌ Search results did not match!"
+                "Search results did not match!"
         );
 
         // 2️⃣ Click first product
@@ -32,7 +32,7 @@ public class CheckOutTest extends TestBase {
 
         Assert.assertTrue(
                 atc.isProductAdded(),
-                "❌ Add to Cart confirmation message NOT shown!"
+                "Add to Cart confirmation message NOT shown!"
         );
 
         // 4️⃣ Go to Cart
@@ -40,7 +40,7 @@ public class CheckOutTest extends TestBase {
 
         Assert.assertTrue(
                 cart.getCartCount() > 0,
-                "❌ Cart is empty after adding product!"
+                "Cart is empty after adding product!"
         );
 
         // 5️⃣ Proceed to Checkout
@@ -50,9 +50,9 @@ public class CheckOutTest extends TestBase {
         String currentUrl = driver.getCurrentUrl();
         Assert.assertTrue(
                 currentUrl.contains("signin") || currentUrl.contains("ap/signin"),
-                "❌ Checkout did NOT redirect to Login Page!"
+                "Checkout did NOT redirect to Login Page!"
         );
 
-        System.out.println("✅ Checkout redirected to Login Page (Expected behavior).");
+        System.out.println("Checkout redirected to Login Page (Expected behavior).");
     }
 }
