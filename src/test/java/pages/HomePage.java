@@ -8,7 +8,7 @@ public class HomePage extends BasePage {
 	private By continueButton =By.xpath("//button[contains(text(),'Continue')]");
     private By searchBtn = By.id("nav-search-submit-button");
     
-    public  SearchResultsPage  search(String product) throws InterruptedException {
+    public  SearchResultsPage  search(String product) {
     	   
     	
     	click(continueButton);
