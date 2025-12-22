@@ -12,7 +12,6 @@ public class HomePage extends BasePage {
     	   
     	
     	click(continueButton);
-    	Thread.sleep(500);
     	
     	input(searchBox,product);
     	
