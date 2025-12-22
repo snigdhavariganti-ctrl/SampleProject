@@ -4,40 +4,49 @@ import org.openqa.selenium.By;
 
 public class ProductPage extends BasePage {
 
-<<<<<<< HEAD
-    private By addToCartBtn = By.id("add-to-cart-button");
-=======
-    private By addToCartBtn = By.xpath("//div[@class='a-section a-spacing-none a-padding-none']//input[@id='add-to-cart-button']");
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
+    // Locators
+    private By addToCartBtn =
+            By.xpath("//div[@class='a-section a-spacing-none a-padding-none']//input[@id='add-to-cart-button']");
     private By productTitle = By.id("productTitle");
     private By price = By.cssSelector("#corePrice_desktop span.a-price-whole");
     private By buyNowBtn = By.id("buy-now-button");
 
+    /**
+     * Get product name.
+     */
     public String getProductName() {
         return getText(productTitle);
     }
 
+    /**
+     * Add product to cart.
+     */
     public AddToCartPage addToCart() {
-<<<<<<< HEAD
-=======
-    	scrollIntoView(addToCartBtn);
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
+        scrollIntoView(addToCartBtn);
         click(addToCartBtn);
         return new AddToCartPage();
     }
-    
+
+    /**
+     * Get product price.
+     */
     public String getProductPrice() {
-	return getText(price);
+        return getText(price);
     }
-    
-    public void clickbuyNow() {
-    	click(buyNowBtn);
+
+    /**
+     * Click Buy Now button.
+     */
+    public void clickBuyNow() {
+        click(buyNowBtn);
     }
-    
-    public boolean titleContains(String expectedtitle) {
-    	
-    return	getProductName().toLowerCase().contains(expectedtitle.toLowerCase());
+
+    /**
+     * Verify product title contains expected text.
+     */
+    public boolean titleContains(String expectedTitle) {
+        return getProductName()
+                .toLowerCase()
+                .contains(expectedTitle.toLowerCase());
     }
-    
-    
 }

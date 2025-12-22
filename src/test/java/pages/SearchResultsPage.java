@@ -2,46 +2,44 @@ package pages;
 
 import org.openqa.selenium.By;
 
-<<<<<<< HEAD
-public class SearchResultsPage extends BasePage {
-	
-    private By resultsTitle = By.cssSelector("span.a-color-state");
-    private By firstProduct = By.cssSelector("div[data-component-type='s-search-result'][data-index='1']");
-=======
 import utilities.WaitUtils;
 
 public class SearchResultsPage extends BasePage {
-	
+
+    // Locators
     private By resultsTitle = By.cssSelector("span.a-color-state");
-    private By firstProduct = By.xpath("(//a[@class='a-link-normal s-line-clamp-2 s-line-clamp-3-for-col-12 s-link-style a-text-normal'])[1]");
-    
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
+    private By firstProduct = By.xpath(
+            "(//a[@class='a-link-normal s-line-clamp-2 s-line-clamp-3-for-col-12 s-link-style a-text-normal'])[1]"
+    );
+
+    /**
+     * Verify search results title contains product name.
+     */
     public boolean titleContains(String product) {
-    	
-    	return getText(resultsTitle).contains(product);
+        return getText(resultsTitle).contains(product);
     }
 
+    /**
+     * Click the first product in search results.
+     */
     public ProductPage clickFirstProduct() {
-<<<<<<< HEAD
-    	
-  	  click(firstProduct);
-=======
-    	WaitUtils.waitforVisibility(By.xpath("//div[@data-component-type='s-search-result']"));
 
-        // scroll to the first result
+        // Wait for search results to load
+        WaitUtils.waitforVisibility(By.xpath("//div[@data-component-type='s-search-result']"));
+
+        // Scroll to the first result
         scrollIntoView(firstProduct);
 
-        // wait until this element is visible + clickable
+        // Ensure element is visible & clickable
         WaitUtils.waitforVisibility(firstProduct);
         WaitUtils.waitforClickable(firstProduct);
-    	
+
+        // Click product
         click(firstProduct);
-        switchToNewTabIfOpened();   // <- You MUST add this
 
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
-  	  
-  	  return new ProductPage();
-  }
+        // Switch to new tab if Amazon opens it
+        switchToNewTabIfOpened();
 
-
+        return new ProductPage();
+    }
 }

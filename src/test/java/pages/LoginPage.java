@@ -3,41 +3,42 @@ package pages;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
-	
-	
-<<<<<<< HEAD
-	private By email = By.id("user-name");
-	private By password = By.id("password");
-	private  By btnlogin = By.id("login-button");
-	
-	public void login(String user,String pass) {
-		
-		input(email,user);
-		input(password,pass);
-		click(btnlogin);
-=======
-	 private By emailField = By.id("ap_email");
-	    private By continueBtn = By.id("continue");
-	    private By passwordField = By.id("ap_password");
-	    private By signInBtn = By.id("signInSubmit");
 
-	    // Successful login indicator
-	    private By accountName = By.id("nav-link-accountList-nav-line-1");
+    // Amazon login locators
+    private By emailField = By.id("ap_email");
+    private By continueBtn = By.id("continue");
+    private By passwordField = By.id("ap_password");
+    private By signInBtn = By.id("signInSubmit");
 
-	    // Error indicator
-	    private By loginError = By.cssSelector("span.a-list-item");
+    // Successful login indicator
+    private By accountName = By.id("nav-link-accountList-nav-line-1");
 
-	
-	public void login(String email,String password) {
-		
-		input(emailField,email);
-		input(passwordField,password);
-		click(continueBtn);
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
-		
-		
-		
-		
-	}
+    // Error indicator
+    private By loginError = By.cssSelector("span.a-list-item");
 
+    /**
+     * Perform login with email and password.
+     */
+    public void login(String email, String password) {
+
+        input(emailField, email);
+        click(continueBtn);
+
+        input(passwordField, password);
+        click(signInBtn);
+    }
+
+    /**
+     * Verify login success.
+     */
+    public boolean isLoginSuccessful() {
+        return isDisplayed(accountName);
+    }
+
+    /**
+     * Verify login failure.
+     */
+    public boolean isLoginErrorDisplayed() {
+        return isDisplayed(loginError);
+    }
 }

@@ -1,80 +1,65 @@
 package tests;
 
-<<<<<<< HEAD
-=======
 import java.io.IOException;
 
 import org.testng.annotations.DataProvider;
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import base.TestBase;
 import pages.LoginPage;
-<<<<<<< HEAD
-
-public class logInTest extends TestBase {
-	
-	@Test
-	@Parameters({"username","password"})
-    public void loginTest(String username,String password) {
-
-	LoginPage login = new LoginPage();
-  
-  login.login(username,password);
-  
-
-}
-}
-=======
 import utilities.ExcelUtils;
 
 public class logInTest extends TestBase {
-	
-	
-	@DataProvider(name="loginData")
-	
-	public Object[][] getLoginData(){
-		return  new Object[][] {
-			 {"wrongemail@gmail.com", "wrongpass", false},
-             {"testuser@gmail.com", "wrongpass", false},
-             {"validuser@gmail.com", "validpassword", true}
 
-     };
-		}
-	
-	@DataProvider(name = "excelLoginData")
-	public Object[][] excelLoginData() throws IOException {
-	String path =	System.getProperty("user.dir") + ".testdata/loginData.xlsx";
-	return ExcelUtils.getSheetData(path, "LoginData");
-		
-	}
+    /**
+     * Hardcoded login data (positive & negative scenarios)
+     */
+    @DataProvider(name = "loginData")
+    public Object[][] getLoginData() {
+        return new Object[][] {
+                {"wrongemail@gmail.com", "wrongpass", false},
+                {"testuser@gmail.com", "wrongpass", false},
+                {"validuser@gmail.com", "validpassword", true}
+        };
+    }
 
- 	
-	
-	
-	@Test(dataProvider = "loginData", groups = "login")
+    /**
+     * Login test using DataProvider
+     */
+    @Test(dataProvider = "loginData", groups = "login")
+    public void loginTest(String username, String password, boolean expectedResult) {
 
-    public void loginTest(String username,String password,boolean expectedResult) {
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(username, password);
 
-	LoginPage logintest = new LoginPage();
-  
-  logintest.login(username,password);
-  
+        if (expectedResult) {
+            // Expected successful login
+            // Assertion can be added if login success indicator exists
+            System.out.println("✅ Login attempted with valid credentials");
+        } else {
+            // Expected failure
+            System.out.println("❌ Login attempted with invalid credentials");
+        }
+    }
 
+    /**
+     * Login test using Excel data
+     */
+    @DataProvider(name = "excelLoginData")
+    public Object[][] excelLoginData() throws IOException {
+        String path = System.getProperty("user.dir") + "/testdata/loginData.xlsx";
+        return ExcelUtils.getSheetData(path, "LoginData");
+    }
+
+    /**
+     * Excel-driven login test
+     */
+    @Test(dataProvider = "excelLoginData", groups = "login")
+    public void testLoginExcel(String email, String password, String expectedResult) {
+
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(email, password);
+
+        System.out.println("🔐 Login attempted using Excel data");
+    }
 }
-	@Test(dataProvider = "excelLoginData",groups ="login")
-	public void testLoginExcel(String email, String password, String expectedResult) {
-		LoginPage logintest = new LoginPage();
-
-		  logintest.login(email,password);
-		  
-	}
-	
-}
-
-	
-	
-	
-
->>>>>>> a3dd876ef156068d68059a139cdba17cd3017050

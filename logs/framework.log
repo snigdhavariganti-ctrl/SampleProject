@@ -1,9 +1,0 @@
-2025-12-14 23:16:15 INFO  Utils - [TestNG] Running:
-  C:\Users\gouds\eclipse-workspace\SampleProject\SampleProject\testng.xml
-
-2025-12-14 23:16:15 INFO  TestBase - Initializing driver...
-2025-12-14 23:16:16 INFO  WebDriverManager - Using chromedriver 143.0.7499.42 (resolved driver for Chrome 143)
-2025-12-14 23:16:16 INFO  WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\gouds\.cache\selenium\chromedriver\win64\143.0.7499.42\chromedriver.exe
-2025-12-14 23:16:17 INFO  TestBase - Driver initialized successfully.
-2025-12-14 23:16:23 INFO  BasePage - Typing into element: By.id: twotabsearchtextbox value: Laptop
-2025-12-14 23:16:43 INFO  TestBase - Closing driver...
